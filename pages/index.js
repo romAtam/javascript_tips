@@ -32,7 +32,7 @@ export async function getStaticProps(context) {
   });
   client.close();
   return {
-    revalidate: 10,
+    revalidate: 1,
     props: {
       meetups: meetups,
     },
