@@ -46,7 +46,8 @@ export async function getStaticProps(context) {
   const meetupsCollection = db.collection("meetups");
   const meetup = await meetupsCollection.findOne({ _id: ObjectId(id) });
   return {
-    revalidate: 1,
+    fallback: "blocking",
+
     props: {
       meetupData: {
         image: meetup.image,
